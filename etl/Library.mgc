@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ClassDiagram>
-    <Class name="ch.admin.hermes.model.schema.Workproduct" x="576" y="67">
+    <Class name="ch.admin.hermes.model.schema.Workproduct" x="38" y="68">
+        <AttributesDisplayFilter public-accepted="false"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="false" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="false"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="ch.admin.hermes.model.schema.Module" x="931" y="78">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="false"/>
@@ -8,35 +17,26 @@
             private-accepted="false" protected-accepted="false"
             default-accepted="false" static-accepted="false"
             accessors-accepted="false" constructors-accepted="false"/>
-        <Association
-            destinationClassName="ch.admin.hermes.model.schema.Workproduct.Template"
-            endpointName="template" kind="Simple"/>
-        <Association
-            destinationClassName="ch.admin.hermes.model.schema.Workproduct.CollaborationRoles"
-            endpointName="collaborationRoles" kind="Simple"/>
     </Class>
-    <Class
-        name="ch.admin.hermes.model.schema.Workproduct.CollaborationRoles"
-        x="800" y="361">
+    <Class name="ch.admin.hermes.model.schema.Scenario" x="689" y="85">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="false"/>
         <MethodDisplayFilter public-accepted="true"
             private-accepted="false" protected-accepted="false"
             default-accepted="false" static-accepted="false"
-            accessors-accepted="true" constructors-accepted="false"/>
+            accessors-accepted="false" constructors-accepted="false"/>
     </Class>
-    <Class name="ch.admin.hermes.etl.model.business.ModelExtract" x="18" y="138">
+    <Class name="ch.admin.hermes.model.schema.Task" x="393" y="79">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="true"/>
-        <MethodDisplayFilter public-accepted="true"
-            private-accepted="true" protected-accepted="true"
-            default-accepted="true" static-accepted="true"
-            accessors-accepted="true" constructors-accepted="true"/>
+        <MethodDisplayFilter public-accepted="false"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
     </Class>
-    <Class name="ch.admin.hermes.model.schema.Workproduct.Template"
-        x="393" y="320">
+    <Class name="ch.admin.hermes.model.schema.Role" x="216" y="349">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="false"/>
@@ -45,40 +45,9 @@
             default-accepted="false" static-accepted="false"
             accessors-accepted="false" constructors-accepted="false"/>
     </Class>
-    <Class name="ch.admin.hermes.model.schema.Task" x="165" y="552">
-        <AttributesDisplayFilter public-accepted="true"
-            private-accepted="true" protected-accepted="true"
-            default-accepted="true" static-accepted="true"/>
-        <MethodDisplayFilter public-accepted="true"
-            private-accepted="false" protected-accepted="false"
-            default-accepted="false" static-accepted="false"
-            accessors-accepted="false" constructors-accepted="false"/>
-        <Association
-            destinationClassName="ch.admin.hermes.model.schema.Task.ResponsibleRole"
-            endpointName="responsibleRole" kind="Simple"/>
-    </Class>
-    <Class name="ch.admin.hermes.model.schema.Role" x="836" y="570">
-        <AttributesDisplayFilter public-accepted="true"
-            private-accepted="true" protected-accepted="true"
-            default-accepted="true" static-accepted="false"/>
-        <MethodDisplayFilter public-accepted="true"
-            private-accepted="false" protected-accepted="false"
-            default-accepted="false" static-accepted="false"
-            accessors-accepted="false" constructors-accepted="false"/>
-    </Class>
-    <Class name="ch.admin.hermes.model.schema.Task.ResponsibleRole"
-        x="520" y="611">
-        <AttributesDisplayFilter public-accepted="true"
-            private-accepted="true" protected-accepted="true"
-            default-accepted="true" static-accepted="false"/>
-        <MethodDisplayFilter public-accepted="true"
-            private-accepted="false" protected-accepted="false"
-            default-accepted="false" static-accepted="false"
-            accessors-accepted="true" constructors-accepted="false"/>
-    </Class>
-    <Note x="106" y="43">Zugriff auf &#xd;
-Library</Note>
-    <Note x="617" y="10">Ergebnisse</Note>
-    <Note x="206" y="484">Aufgaben</Note>
-    <Note x="897" y="505">Rollen</Note>
+    <Note x="56" y="19">Ergebnisse</Note>
+    <Note x="447" y="18">Aufgaben</Note>
+    <Note x="270" y="294">Rollen</Note>
+    <Note x="734" y="30">Szenarien</Note>
+    <Note x="990" y="29">Module</Note>
 </ClassDiagram>
