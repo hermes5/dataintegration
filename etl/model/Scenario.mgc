@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassDiagram>
+    <Class name="ch.admin.hermes.model.schema.Workproduct" x="598" y="801">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="ch.admin.hermes.model.schema.Workproduct.Template"
+            endpointName="template" kind="Simple"/>
+        <Association
+            destinationClassName="ch.admin.hermes.model.schema.Workproduct.CollaborationRoles"
+            endpointName="collaborationRoles" kind="Simple"/>
+    </Class>
+    <Class name="ch.admin.hermes.model.schema.WorkproductRef" x="458" y="671">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="ch.admin.hermes.model.schema.TaskRef" x="230" y="427">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="true"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="true"
+            accessors-accepted="true" constructors-accepted="true"/>
+        <Association
+            destinationClassName="ch.admin.hermes.model.schema.WorkproductRef"
+            endpointName="workproductRef" kind="Simple"/>
+    </Class>
+    <Class name="ch.admin.hermes.model.schema.Phase" x="91" y="165">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="ch.admin.hermes.model.schema.ModuleRef"
+            endpointName="moduleRef" kind="Simple"/>
+    </Class>
+    <Class
+        name="ch.admin.hermes.model.schema.Workproduct.CollaborationRoles"
+        x="807" y="660">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="ch.admin.hermes.etl.model.business.ModelExtract"
+        x="766" y="72">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="true" constructors-accepted="false"/>
+    </Class>
+    <Class name="ch.admin.hermes.model.schema.Workproduct.Template"
+        x="893" y="822">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="ch.admin.hermes.model.schema.Task" x="729" y="416">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="ch.admin.hermes.model.schema.Task.ResponsibleRole"
+            endpointName="responsibleRole" kind="Simple"/>
+    </Class>
+    <Class name="ch.admin.hermes.model.schema.Scenario" x="31" y="35">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="ch.admin.hermes.model.schema.Phase"
+            endpointName="phase" kind="Simple"/>
+    </Class>
+    <Class name="ch.admin.hermes.model.schema.Task.ResponsibleRole"
+        x="995" y="496">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="ch.admin.hermes.model.schema.ModuleRef" x="175" y="304">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="ch.admin.hermes.model.schema.TaskRef"
+            endpointName="taskRef" kind="Simple"/>
+    </Class>
+    <Note x="560" y="486">Zugriff auf Task &#xd;
+mittels id via Library</Note>
+    <Note x="869" y="4">Zugriff auf &#xd;
+Library</Note>
+    <Note x="258" y="63">Szenario beinhaltet Phasen</Note>
+    <Note x="315" y="183">Phasen beinhalten Module &#xd;
+bzw. einen Referenz darauf</Note>
+    <Note x="315" y="315">Module beinhalten Aufgaben&#xd;
+bzw. einen Referenz darauf</Note>
+    <Note x="593" y="681">Aufgaben produzieren&#xd;
+Ergebnisse</Note>
+    <Note x="964" y="417">Für eine Aufgabe ist eine&#xd;
+Rolle Verantwortlich</Note>
+    <Note x="1006" y="654">Rollen Arbeiten an&#xd;
+Ergebnissen mit</Note>
+    <Note x="1071" y="837">Ein Ergebnis kann mehrere&#xd;
+Vorlagen, Verweise auf Websiten&#xd;
+enthalten</Note>
+</ClassDiagram>
