@@ -5,6 +5,8 @@ HERMES ist die Projektmanagementmethode für Projekte im Bereich der Informatik,
 
 In diesem Repository befinden sich Tools für Tools-Hersteller, Entwickler und System-Administratoren welche im Wiki https://github.com/hermes5/tools/wiki beschrieben sind.
 
+Der aktuelle Release kann unter https://github.com/hermes5/tools/releases downgeloadet werden.
+
 HERMES Anwender finden alle Informationen zu HERMES auf http://www.hermes.admin.ch.
 
 
