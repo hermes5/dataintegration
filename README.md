@@ -9,7 +9,7 @@ Der aktuelle Release kann unter https://github.com/hermes5/tools/releases downge
 
 HERMES Anwender finden alle Informationen zu HERMES auf http://www.hermes.admin.ch.
 
-Alle Dateien, sofern nicht anders beschrieben, unterstehen folgendem Copyright und Lizenz:
+Alle Dateien unterstehen, sofern nicht anders beschrieben,folgendem Copyright und Lizenz:
 
 Copyright 2014 Federal IT Steering Unit FITSU Licensed under the Apache License, Version 2.0 (the "License"); you
 may not use this file except in compliance with the License. You may obtain a copy of the License at
