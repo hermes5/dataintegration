@@ -255,7 +255,8 @@ public class HermesETLApplication
         myPanel.add( tpasswd );
         
         // Trick um Feld scenario und model zu setzen.
-        scenarios.setSelectedIndex( 8 );
+        if  ( scenarios.getItemCount() >= 8 )
+            scenarios.setSelectedIndex( 8 );
 
         // Dialog
         int result = JOptionPane.showConfirmDialog( null, myPanel, "HERMES 5 XML Model nach Fremdsystem/Format", JOptionPane.OK_CANCEL_OPTION );

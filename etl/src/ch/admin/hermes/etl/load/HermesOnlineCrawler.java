@@ -14,6 +14,8 @@ package ch.admin.hermes.etl.load;
 
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
+
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -82,22 +84,31 @@ public class HermesOnlineCrawler
         ArrayList<String> s = new ArrayList<String>();
         HttpGet get = new HttpGet( url + scenarios );
         
-        HttpResponse response = httpClient.execute( get );
-
-        HttpEntity entity = response.getEntity();
-        String pageHTML = EntityUtils.toString( entity );
-        EntityUtils.consume( entity );
-
-        Document document = Jsoup.parse( pageHTML );
-        Elements elements = document.getElementsByAttribute( "href" );
-        for ( Element e : elements )
+        try
         {
-            if  ( e.attr( "href" ).startsWith( "/szenarien" ) )
+            HttpResponse response = httpClient.execute( get );
+
+            HttpEntity entity = response.getEntity();
+            String pageHTML = EntityUtils.toString( entity );
+            EntityUtils.consume( entity );
+
+            Document document = Jsoup.parse( pageHTML );
+            Elements elements = document.getElementsByAttribute( "href" );
+            for ( Element e : elements )
             {
-                String attr = e.attr( "href" ).substring( scenario_prefix.length()  );
-                attr = attr.substring( 0, attr.lastIndexOf( '/' ) );
-                s.add( attr );
+                if  ( e.attr( "href" ).startsWith( "/szenarien" ) )
+                {
+                    String attr = e.attr( "href" ).substring( scenario_prefix.length()  );
+                    attr = attr.substring( 0, attr.lastIndexOf( '/' ) );
+                    s.add( attr );
+                }
             }
+        }
+        catch (Exception e)
+        {
+            JOptionPane.showMessageDialog( null, "Keine Online Verbindung möglich. Bitte Szenario manuell downloaden, entpacken und bei XMl Model eintragen." , 
+                            "Keine Verbindung zu http://www.hermes.admin.ch", JOptionPane.WARNING_MESSAGE );
+            
         }
         return  ( s.toArray( new String[s.size()] ));
     }
