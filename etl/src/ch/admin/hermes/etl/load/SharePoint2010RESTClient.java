@@ -47,7 +47,6 @@ import org.apache.http.conn.scheme.SchemeRegistry;
 import org.apache.http.conn.ssl.SSLSocketFactory;
 import org.apache.http.conn.ssl.TrustStrategy;
 import org.apache.http.entity.ByteArrayEntity;
-import org.apache.http.entity.FileEntity;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.params.BasicHttpParams;
@@ -200,7 +199,10 @@ public class SharePoint2010RESTClient
     
     public String uploadDocument( String path, String name, String localname ) throws Exception
     {
-        return  ( putFile( path, name, new URL(localname) ) );
+        if  ( localname.startsWith( "http" ) )
+            return  ( putFile( path, name, new URL(localname) ) );
+        // locale Datei
+        return  ( putFile( path, name, new File(localname) ) );    
     }
     
     // //////////////////////////////////////////////////////////////////////////////////////////////
@@ -332,13 +334,25 @@ public class SharePoint2010RESTClient
     
     protected String putFile( String uri, String name, File data ) throws IOException
     {
+        // bei SharePoint 2010 funktioniert FileEntity nicht, deshalb zuerst in Memory lesen
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        if  ( data != null )
+        {
+            byte buf[] = new byte[128 * 32768];
+            InputStream inp = new FileInputStream( data );
+            for ( int length; (length = inp.read( buf, 0, buf.length )) > 0; )
+                out.write( buf, 0, length );
+            out.close();
+            inp.close();
+        }
+        
         HttpPut request = new HttpPut( remote + "/" + uri + "/" + name );
         request.addHeader( "Accept", "application/json;odata=verbose;charset=utf-8" );
         request.addHeader( "Content-Type", "application/msword" );    
         
         if  ( data != null )
         {
-            FileEntity entity = new FileEntity( data );
+            ByteArrayEntity entity = new ByteArrayEntity( out.toByteArray() );
             request.setEntity( entity ); 
         }
         

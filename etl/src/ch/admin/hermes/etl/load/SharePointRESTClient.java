@@ -376,7 +376,10 @@ public class SharePointRESTClient
     
     public String uploadDocument( String path, String name, String localname ) throws Exception
     {
-        return  ( postFile( "/_api/web/GetFolderByServerRelativeUrl('" + path + "')/Files/add(url='" + name + "',overwrite=true)", new URL(localname) ) );
+        if  ( localname.startsWith( "http" ) )
+            return  ( postFile( "/_api/web/GetFolderByServerRelativeUrl('" + path + "')/Files/add(url='" + name + "',overwrite=true)", new URL(localname) ) );
+        // lokale Datei
+        return  ( postFile( "/_api/web/GetFolderByServerRelativeUrl('" + path + "')/Files/add(url='" + name + "',overwrite=true)", new File(localname) ) );
     }
     
     // //////////////////////////////////////////////////////////////////////////////////////////////

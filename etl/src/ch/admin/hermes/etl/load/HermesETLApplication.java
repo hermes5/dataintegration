@@ -96,15 +96,24 @@ public class HermesETLApplication
             
             frame = createProgressDialog();
             // wird das XML Model von HERMES Online geholt - URL der Templates korrigieren
-            if  ( model.startsWith( "http" ) && scenario != null )
+            if  ( scenario != null )
             {
                 List<Workproduct> workproducts = (List<Workproduct>) root.getObjects().get( "workproducts" );
                 for ( Workproduct wp : workproducts )
                     for ( Template t : wp.getTemplate() )
                     {
-                        if  ( t.getUrl().startsWith( "http" ) )
+                        // Template beinhaltet kompletten URL - keine Aenderung
+                        if  ( t.getUrl().toLowerCase().startsWith( "http" ) || t.getUrl().toLowerCase().startsWith( "file" ) )
                             continue;
-                        t.setUrl( crawler.getTemplateURL( scenario, t.getUrl() ) );
+                        // Model wird ab Website geholte
+                        if  ( model.startsWith( "http" )  )                            
+                            t.setUrl( crawler.getTemplateURL( scenario, t.getUrl() ) );
+                        // Model ist lokal - Path aus model und relativem Path Template zusammenstellen
+                        else
+                        {
+                            File m = new File( model );
+                            t.setUrl( m.getParentFile() + "/" + t.getUrl() ); 
+                        }
                     }
             }
             
