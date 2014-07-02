@@ -132,8 +132,8 @@ function main( site, user, passwd )
         for	( var ii = wp.getTemplate().iterator() ; ii.hasNext();  )
     	{
         	var template = ii.next();
-        	// nur Word Dokumente von Interesse
-        	if	( template.getUrl().endsWith( ".docx") )
+        	// nur MS Office Dokumente von Interesse (Links ingorieren)
+        	if	( template.getUrl().endsWith( ".docx") || template.getUrl().endsWith( ".xlsx") || template.getUrl().endsWith( ".pptx") )
     		{
 	            log( "Dokument: " + wp.getName() + " -> " + "Dokumentenvorlagen/" + template.getName() );
 	            client.uploadDocument( "Dokumentenvorlagen/", template.getName(), template.getUrl() );
