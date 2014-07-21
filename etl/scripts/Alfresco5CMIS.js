@@ -74,8 +74,8 @@ function main( site, user, passwd )
 	// Szenario nach Alfresco, d.h. Aufgaben und Ergebnisse (Phasen und Module werden ignoriert)
     
 	// Laufnummer - wird an Namen angefuegt um doppelte Eintraege zu verhindern
-	var count = 1;
-	var wpCount = 1;
+	var count = 100;
+	var wpCount = 100;
 	for	( var ii = scenario.getPhase().iterator(); ii.hasNext() ; )
 	{
 		var phase = ii.next();
@@ -109,7 +109,7 @@ function main( site, user, passwd )
 				properties.put( "cm:description", task.getBasicIdea() );
 				
 				// Inhalt des HTML Dokuments
-				var content = client.getHTML( phase.getPresentationName().toUpperCase() + " - " + task.getPresentationName(), 
+				var content = client.getHTML( phase.getPresentationName().toUpperCase() + " - " + task.getPresentationName() + " (" + role + ")", 
 						                      "<h1>" + phase.getPresentationName().toUpperCase() + " - " + task.getPresentationName() + "</h1>" +
 						                      "<h2>Grundidee</h2>" + task.getBasicIdea() + "<p>" +
 						                      "<h2>HERMES Spezifisch</h2>" +  task.getHermesSpecific() + "<p>" + 
@@ -158,7 +158,7 @@ function main( site, user, passwd )
 			properties.put( "cm:description", wp.getDescription() );
 			
 			// Inhalt des HTML Dokuments
-			var content = client.getHTML( phase.getPresentationName().toUpperCase() + " - " + wp.getPresentationName(), 
+			var content = client.getHTML( phase.getPresentationName().toUpperCase() + " - " + wp.getPresentationName()+ " (" + role + ")", 
 					                      "<h1>" + phase.getPresentationName().toUpperCase() + " - " + wp.getPresentationName() + "</h1>" +
 					                      wp.getDescription() + "<p>" + 
 					                      "<h2>Inhalt</h2>" + wp.getTopic() + "<p>" +
