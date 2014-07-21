@@ -7,7 +7,7 @@
 <listEntry value="1"/>
 </listAttribute>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="ch.admin.hermes.etl.load.HermesETLApplication"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-s http://alfresco:8080/alfresco/s/cmis&#13;&#10;-u admin&#13;&#10;-p admin&#13;&#10;scripts/Alfresco5CMIS.js&#13;&#10;D:/TEMP/HERMES5/Hermes/model/de/model_de.xml"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-s http://alfresco:8080&#13;&#10;-u admin&#13;&#10;-p admin&#13;&#10;scripts/Alfresco5CMIS.js&#13;&#10;D:/TEMP/HERMES5/Hermes/model/de/model_de.xml"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="etl"/>
 <stringAttribute key="org.eclipse.jdt.launching.WORKING_DIRECTORY" value="${workspace_loc:etl}"/>
 </launchConfiguration>

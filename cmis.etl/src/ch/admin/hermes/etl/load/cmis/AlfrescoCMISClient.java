@@ -62,8 +62,12 @@ import org.apache.http.util.EntityUtils;
 
 public class AlfrescoCMISClient
 {
-    /** Remote Hosts */
-    private String remote = "http://alfresco:8080/alfresco/s/cmis";
+    /** Remote Host */
+    private String host = "http://alfresco:8080/alfresco/s/cmis";
+    /** Default Path wo die Daten abgestellt werden */
+    private String path = "/Data Dictionary/Space Templates";
+    /** API Path fuer den Zugriff via CMIS */
+    private static final String CMIS = "/alfresco/s/cmis";
     /** Username */
     private String user = "admin";
     /** Password */
@@ -95,16 +99,24 @@ public class AlfrescoCMISClient
      */
     private void init(String remote, String user, String pass ) throws Exception
     {
-        this.remote = (remote != null) ? remote : this.remote;
         this.user = (user != null) ? user : this.user;
         this.pass = (pass != null) ? pass : this.pass;
+        
+        // Host und Path trennen, weil unterschiedlich verwendet.
+        if  ( remote != null )
+        {
+            URL url = new URL(  remote );
+            this.host = url.getProtocol() + "://" + url.getAuthority();
+            if  ( url.getPath() != null && url.getPath().trim().length() > 0 )
+                this.path = url.getPath();
+        }
         
         SessionFactory sessionFactory = SessionFactoryImpl.newInstance();
 
         Map<String, String> params = new HashMap<String, String>();
         params.put( SessionParameter.USER, this.user );
         params.put( SessionParameter.PASSWORD, this.pass );
-        params.put( SessionParameter.ATOMPUB_URL, this.remote );
+        params.put( SessionParameter.ATOMPUB_URL, this.host + CMIS );
         params.put( SessionParameter.BINDING_TYPE, BindingType.ATOMPUB.value() );
 
         // session locale
@@ -121,6 +133,15 @@ public class AlfrescoCMISClient
         
         // Zugriff auf http://www.hermes.admin.ch
         client = getHttpClient();
+    }
+
+    /**
+     * Liefert die Pfadangabe, wo die Dateien abgestellt werden sollen.
+     * @return the path
+     */
+    public String getPath()
+    {
+        return path;
     }
 
     /**

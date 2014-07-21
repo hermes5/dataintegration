@@ -30,7 +30,11 @@ function main( site, user, passwd )
 	
 	log( "Erstelle Layout" );
 	
-    var root 			= client.getNodeByPath( "/Data Dictionary/Space Templates" );
+	// Die Pfad Angabe im Aufruf bestimmt den Ablageort in Alfresco
+    var root 			= client.getNodeByPath( client.getPath() );
+    if	( root == null )
+    	throw new Exception( "Ungueltige Path Angabe " + site );
+    
     var scenarioA 		= client.createFolder( root.getId(), scenario.getName() );
     var decisionA 		= client.createFolder( scenarioA.getId(), "Entscheidungsprozess" );
     var taskA 			= client.createFolder( scenarioA.getId(), "Aufgaben" );
@@ -63,7 +67,7 @@ function main( site, user, passwd )
 		
 		// Rolle in Alfresco abstellen
 		log( "Rolle: " + role.getId() + " " + role.getPresentationName() );
-		client.createDocument( rolesA.getId(), role.getName(), properties, "text/html", content );
+		client.createDocument( rolesA.getId(), role.getName() + ".html", properties, "text/html", content );
 	}
 	
 	/////////////////////////////////////////////////////////////////////////////////////////
@@ -101,12 +105,12 @@ function main( site, user, passwd )
 				// Alfresco Aspect: P:cm:titled Attribute
 				properties.put( "cm:title", phase.getPresentationName().toUpperCase() + " - " + task.getPresentationName() +
 						                    " (" + role + ")" );
-				properties.put( "cm:description", task.getDescription() );
+				// Grundidee entspricht dem Feld Description
+				properties.put( "cm:description", task.getBasicIdea() );
 				
 				// Inhalt des HTML Dokuments
 				var content = client.getHTML( phase.getPresentationName().toUpperCase() + " - " + task.getPresentationName(), 
 						                      "<h1>" + phase.getPresentationName().toUpperCase() + " - " + task.getPresentationName() + "</h1>" +
-						                      task.getDescription() + "<p>" + 
 						                      "<h2>Grundidee</h2>" + task.getBasicIdea() + "<p>" +
 						                      "<h2>HERMES Spezifisch</h2>" +  task.getHermesSpecific() + "<p>" + 
 						                      "<h2>Aktivitäten</h2>" +  task.getActivities() + "<p>" +
@@ -117,10 +121,10 @@ function main( site, user, passwd )
 				var rc = null;
 				// Entscheide werden in separates Verzeichnis abgestellt
 				if	( task.getPresentationName().startsWith("Entscheid") )
-					rc = client.createDocument( decisionA.getId(), (count++).toString(), properties, "text/html", content );
+					rc = client.createDocument( decisionA.getId(), (count++).toString() + ".html", properties, "text/html", content );
 				// alle anderen Tasks
 				else
-					rc = client.createDocument( taskA.getId(), (count++).toString(), properties, "text/html", content );
+					rc = client.createDocument( taskA.getId(), (count++) + ".html", properties, "text/html", content );
 
 				// holt die eindeutige Id des letzten geschriebenen Items, wird unten wieder beim Ergebnis verwendet, siehe AufgabeId
 				var id = rc.getId();
@@ -163,7 +167,7 @@ function main( site, user, passwd )
 		
 			// Aufgabe in Alfresco abstellen
 			log( "Ergebnis: " + wp.getId() + " " + wp.getPresentationName() );
-			client.createDocument( workproductsA.getId(), (wpCount++).toString(), properties, "text/html", content );
+			client.createDocument( workproductsA.getId(), (wpCount++) + ".html", properties, "text/html", content );
 		}
 	}
 	
