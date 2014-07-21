@@ -310,7 +310,7 @@ public class AlfrescoCMISClient
             client.createFolder( project.getId(), "Rollen" );
             
             for ( int i = 0; i < 10; i++ )
-                client.createDocument( tasks.getId(), "Test " + i + ".html", null, "text/html", client.getHTML( "Test" + i, "Inhalt " + i ) );
+                client.createDocument( tasks.getId(), "Test " + i + ".html", null, "text/html", client.getHTML( "Test" + i, "Beschreibung" + i, "Inhalt " + i ) );
         }
     }
     
@@ -387,25 +387,26 @@ public class AlfrescoCMISClient
      * @param content Inhalt
      * @return aufbereiteter HTML Inhalt.
      */
-    public String getHTML( String name, String content )
+    public String getHTML( String name, String description, String content )
     {
-        return  ( "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" http://www.w3.org/TR/html4/loose.dtd\">" + 
-                  "<html>" +
-                  "<head>" + 
-                  "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">" + 
-                  "<link type=\"text/css\" rel=\"stylesheet\" href=\"http://www.hermes.admin.ch/javax.faces.resource/theme.css.xhtml?ln=primefaces-aristo\" />" +
-                  "<link type=\"text/css\" rel=\"stylesheet\" href=\"http://www.hermes.admin.ch/javax.faces.resource/style.css.xhtml?ln=css\" />" +
-                  "<link type=\"text/css\" rel=\"stylesheet\" href=\"http://www.hermes.admin.ch/javax.faces.resource/messages.css.xhtml?ln=css\" />" +
-                  "<link type=\"text/css\" rel=\"stylesheet\" href=\"http://www.hermes.admin.ch/javax.faces.resource/tablestyle.css.xhtml?ln=css\" />" +
-                  "<link type=\"text/css\" rel=\"stylesheet\" href=\"http://www.hermes.admin.ch/javax.faces.resource/menustyle.css.xhtml?ln=css\" />" +
-                  "<link type=\"text/css\" rel=\"stylesheet\" href=\"http://www.hermes.admin.ch/javax.faces.resource/dialogstyle.css.xhtml?ln=css\" />" +
-                  "<link type=\"text/css\" rel=\"stylesheet\" href=\"http://www.hermes.admin.ch/javax.faces.resource/watermark/watermark.css.xhtml?ln=primefaces\" />" +
-                  "<title>" + name + "</title>" +
-                  "</head>" +
-                  "<body>" +
+        return  ( "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" http://www.w3.org/TR/html4/loose.dtd\">\n" + 
+                  "<html>\n" +
+                  "<head>\n" + 
+                  "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n" + 
+                  "<link type=\"text/css\" rel=\"stylesheet\" href=\"http://www.hermes.admin.ch/javax.faces.resource/theme.css.xhtml?ln=primefaces-aristo\" />\n" +
+                  "<link type=\"text/css\" rel=\"stylesheet\" href=\"http://www.hermes.admin.ch/javax.faces.resource/style.css.xhtml?ln=css\" />\n" +
+                  "<link type=\"text/css\" rel=\"stylesheet\" href=\"http://www.hermes.admin.ch/javax.faces.resource/messages.css.xhtml?ln=css\" />\n" +
+                  "<link type=\"text/css\" rel=\"stylesheet\" href=\"http://www.hermes.admin.ch/javax.faces.resource/tablestyle.css.xhtml?ln=css\" />\n" +
+                  "<link type=\"text/css\" rel=\"stylesheet\" href=\"http://www.hermes.admin.ch/javax.faces.resource/menustyle.css.xhtml?ln=css\" />\n" +
+                  "<link type=\"text/css\" rel=\"stylesheet\" href=\"http://www.hermes.admin.ch/javax.faces.resource/dialogstyle.css.xhtml?ln=css\" />\n" +
+                  "<link type=\"text/css\" rel=\"stylesheet\" href=\"http://www.hermes.admin.ch/javax.faces.resource/watermark/watermark.css.xhtml?ln=primefaces\" />\n" +
+                  "<title>" + name + "</title>\n" +
+                  "<meta name=\"DESCRIPTION\" content=\"" + description + "\"/>\n" +
+                  "</head>\n" +
+                  "<body>\n" +
                   content +
-                  "</body>" +
-                  "</html>" );
+                  "</body>\n" +
+                  "</html>\n" );
     }
 
     // //////////////////////////////////////////////////////////////////////////////////////////////

@@ -59,7 +59,9 @@ function main( site, user, passwd )
 		properties.put( "cm:description", role.getDescription() );
 		
 		// Inhalt des HTML Dokuments
-		var content = client.getHTML( role.getPresentationName(), "<h1>" + role.getPresentationName() + "</h1>" +
+		var content = client.getHTML( role.getPresentationName(), 
+									  role.getDescription(), 
+				                      "<h1>" + role.getPresentationName() + "</h1>" +
 				                      role.getDescription() + "<p>" + 
 				                      "<h2>Verantwortung</h2>" + role.getResponsibility() + "<p>" +
 				                      "<h2>Kompetenzen</h2>" +  role.getAuthority() + "<p>" + 
@@ -110,6 +112,7 @@ function main( site, user, passwd )
 				
 				// Inhalt des HTML Dokuments
 				var content = client.getHTML( phase.getPresentationName().toUpperCase() + " - " + task.getPresentationName() + " (" + role + ")", 
+											  task.getBasicIdea(),
 						                      "<h1>" + phase.getPresentationName().toUpperCase() + " - " + task.getPresentationName() + "</h1>" +
 						                      "<h2>Grundidee</h2>" + task.getBasicIdea() + "<p>" +
 						                      "<h2>HERMES Spezifisch</h2>" +  task.getHermesSpecific() + "<p>" + 
@@ -159,6 +162,7 @@ function main( site, user, passwd )
 			
 			// Inhalt des HTML Dokuments
 			var content = client.getHTML( phase.getPresentationName().toUpperCase() + " - " + wp.getPresentationName()+ " (" + role + ")", 
+										  wp.getDescription(),
 					                      "<h1>" + phase.getPresentationName().toUpperCase() + " - " + wp.getPresentationName() + "</h1>" +
 					                      wp.getDescription() + "<p>" + 
 					                      "<h2>Inhalt</h2>" + wp.getTopic() + "<p>" +
