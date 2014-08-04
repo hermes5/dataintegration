@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="Vorlagen_WP.VisualWebPart1.Vorlagen_updaten, Vorlagen_WP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a60c3a273db457e7" />
+      <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="Title" type="string">Vorlagen_WP - Vorlagen_aktualisieren</property>
+        <property name="Description" type="string">Vorlagen anhand der Projektdaten aktualisieren</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>

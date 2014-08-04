@@ -1,0 +1,1 @@
+bin\Debug\Vorlagen_WP.wsp

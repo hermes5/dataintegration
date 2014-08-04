@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Solution xmlns="http://schemas.microsoft.com/sharepoint/" SolutionId="41ff49e8-b284-45af-a88c-8e3cb04840a4" SharePointProductVersion="15.0">
+  <Assemblies>
+    <Assembly Location="Rollenzuteilung_WP.dll" DeploymentTarget="GlobalAssemblyCache">
+      <SafeControls>
+        <SafeControl Assembly="Rollenzuteilung_WP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e2cfdb704a17a8fd" Namespace="Rollenzuteilung_WP.VisualWebPart1" TypeName="*" />
+      </SafeControls>
+    </Assembly>
+  </Assemblies>
+  <FeatureManifests>
+    <FeatureManifest Location="Rollenzuteilung_WP_Feature1\Feature.xml" />
+  </FeatureManifests>
+</Solution>

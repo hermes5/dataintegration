@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package dslVersion="1.0.0.0" 
+        Id="41ff49e8-b284-45af-a88c-8e3cb04840a4" 
+        solutionId="41ff49e8-b284-45af-a88c-8e3cb04840a4" 
+        xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel" 
+        name="Rollenzuteilung_WP"
+        sharePointProductVersion="15.0">
+    <features>
+        <featureReference itemId="76999bcb-9c38-4475-8654-2e3ba24b46e1" />
+    </features>
+</package>

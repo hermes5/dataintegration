@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectItem Type="Microsoft.VisualStudio.SharePoint.WebPart" DefaultFile="Vorlagen_updaten.ascx" SupportedTrustLevels="All" SupportedDeploymentScopes="Site" xmlns="http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel">
+  <Files>
+    <ProjectItemFile Source="Elements.xml" Target="Vorlagen_aktualisieren\" Type="ElementManifest" />
+    <ProjectItemFile Source="VisualWebPart1.webpart" Target="Vorlagen_aktualisieren\" Type="ElementFile" />
+  </Files>
+  <SafeControls>
+    <SafeControl Name="SafeControlEntry1" Assembly="$SharePoint.Project.AssemblyFullName$" Namespace="Vorlagen_WP.VisualWebPart1" TypeName="*" IsSafe="true" IsSafeAgainstScript="false" />
+  </SafeControls>
+</ProjectItem>

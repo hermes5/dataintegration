@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Feature xmlns="http://schemas.microsoft.com/sharepoint/" Title="Vorlagen mit Projekdaten befüllen" Description="Lädt die Projektdaten in die Dokumentenvorlagen für das Projekt" Id="403bc970-3045-4d73-a7b0-715e0ef7aa5d" Scope="Site">
+  <ElementManifests>
+    <ElementManifest Location="Vorlagen_aktualisieren\Elements.xml" />
+    <ElementFile Location="Vorlagen_aktualisieren\VisualWebPart1.webpart" />
+  </ElementManifests>
+</Feature>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package dslVersion="1.0.0.0" 
+        Id="76027c95-de34-46fe-928c-f6c1f564ebe1" 
+        solutionId="76027c95-de34-46fe-928c-f6c1f564ebe1" 
+        xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel" 
+        name="Vorlagen_WP"
+        sharePointProductVersion="15.0">
+    <features>
+        <featureReference itemId="403bc970-3045-4d73-a7b0-715e0ef7aa5d" />
+    </features>
+</package>

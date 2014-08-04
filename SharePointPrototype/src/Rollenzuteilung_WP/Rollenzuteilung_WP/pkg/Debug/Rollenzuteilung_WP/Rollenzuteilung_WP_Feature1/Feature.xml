@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Feature xmlns="http://schemas.microsoft.com/sharepoint/" Title="Rollenzuteilung_WP Feature1" AlwaysForceInstall="TRUE" Creator="Gianni Zanetti" Description="Weist gemäss der Rollenzuteilung die verantwortliche Person in den Aufgaben und Ergebnissen hinzu" Id="76999bcb-9c38-4475-8654-2e3ba24b46e1" Scope="Site">
+  <ElementManifests>
+    <ElementManifest Location="StartRollenzuteilung_Personalisiert\Elements.xml" />
+    <ElementFile Location="StartRollenzuteilung_Personalisiert\VisualWebPart1.webpart" />
+  </ElementManifests>
+</Feature>

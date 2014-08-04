@@ -1,0 +1,5 @@
+C:\SHP2013\2-RELEASES\C16996_10\C16996_10 ISB - Prototyp HERMES5 Sharepoint\Vorlagen_WP\Vorlagen_WP\bin\Debug\Vorlagen_WP.dll
+C:\SHP2013\2-RELEASES\C16996_10\C16996_10 ISB - Prototyp HERMES5 Sharepoint\Vorlagen_WP\Vorlagen_WP\bin\Debug\Vorlagen_WP.pdb
+C:\SHP2013\2-RELEASES\C16996_10\C16996_10 ISB - Prototyp HERMES5 Sharepoint\Vorlagen_WP\Vorlagen_WP\obj\Debug\Vorlagen_WP.csprojResolveAssemblyReference.cache
+C:\SHP2013\2-RELEASES\C16996_10\C16996_10 ISB - Prototyp HERMES5 Sharepoint\Vorlagen_WP\Vorlagen_WP\obj\Debug\Vorlagen_WP.dll
+C:\SHP2013\2-RELEASES\C16996_10\C16996_10 ISB - Prototyp HERMES5 Sharepoint\Vorlagen_WP\Vorlagen_WP\obj\Debug\Vorlagen_WP.pdb

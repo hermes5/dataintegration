@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/" >
+  <Module Name="StartRollenzuteilung_Personalisiert" List="113" Url="_catalogs/wp">
+    <File Path="StartRollenzuteilung_Personalisiert\VisualWebPart1.webpart" Url="Rollenzuteilung_WP_VisualWebPart1.webpart" Type="GhostableInLibrary" >
+      <Property Name="Group" Value="HERMES5" />
+    </File>
+  </Module>
+</Elements>

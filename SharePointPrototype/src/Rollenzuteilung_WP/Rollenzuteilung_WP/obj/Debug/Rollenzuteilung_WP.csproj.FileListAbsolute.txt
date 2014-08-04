@@ -1,0 +1,5 @@
+C:\SHP2013\2-RELEASES\C16996_10\C16996_10 ISB - Prototyp HERMES5 Sharepoint\WebParts\Rollenzuteilung_WP\Rollenzuteilung_WP\bin\Debug\Rollenzuteilung_WP.dll
+C:\SHP2013\2-RELEASES\C16996_10\C16996_10 ISB - Prototyp HERMES5 Sharepoint\WebParts\Rollenzuteilung_WP\Rollenzuteilung_WP\bin\Debug\Rollenzuteilung_WP.pdb
+C:\SHP2013\2-RELEASES\C16996_10\C16996_10 ISB - Prototyp HERMES5 Sharepoint\WebParts\Rollenzuteilung_WP\Rollenzuteilung_WP\obj\Debug\Rollenzuteilung_WP.csprojResolveAssemblyReference.cache
+C:\SHP2013\2-RELEASES\C16996_10\C16996_10 ISB - Prototyp HERMES5 Sharepoint\WebParts\Rollenzuteilung_WP\Rollenzuteilung_WP\obj\Debug\Rollenzuteilung_WP.dll
+C:\SHP2013\2-RELEASES\C16996_10\C16996_10 ISB - Prototyp HERMES5 Sharepoint\WebParts\Rollenzuteilung_WP\Rollenzuteilung_WP\obj\Debug\Rollenzuteilung_WP.pdb

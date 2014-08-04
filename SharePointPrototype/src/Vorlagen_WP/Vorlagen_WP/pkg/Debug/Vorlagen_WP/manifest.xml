@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Solution xmlns="http://schemas.microsoft.com/sharepoint/" SolutionId="76027c95-de34-46fe-928c-f6c1f564ebe1" SharePointProductVersion="15.0">
+  <Assemblies>
+    <Assembly Location="Vorlagen_WP.dll" DeploymentTarget="GlobalAssemblyCache">
+      <SafeControls>
+        <SafeControl Assembly="Vorlagen_WP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a60c3a273db457e7" Namespace="Vorlagen_WP.VisualWebPart1" TypeName="*" />
+      </SafeControls>
+    </Assembly>
+  </Assemblies>
+  <FeatureManifests>
+    <FeatureManifest Location="Vorlagen_WP_Feature1\Feature.xml" />
+  </FeatureManifests>
+</Solution>
