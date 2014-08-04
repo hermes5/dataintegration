@@ -1,11 +1,11 @@
-HERMES 5 Data Integration
-=========================
+HERMES 5 SharePoint 2013 Prototyp
+=================================
 
 HERMES ist die Projektmanagementmethode für Projekte im Bereich der Informatik, der Entwicklung von Dienstleistungen und Produkten sowie der Anpassung der Geschäftsorganisation. HERMES unterstützt die Steuerung, Führung und Ausführung von Projekten verschiedener Charakteristiken und Komplexität. HERMES hat eine klare, einfach verständliche Methodenstruktur, ist modular aufgebaut und erweiterbar.
 
 In diesem Verzeichnis befindet sich der von Zühlke, im Auftrag des Informatiksteuerungsorgan des Bundes ISB, entwickelte SharePoint 2013 Prototyp.
 
-Die Installationsanweisung befindet sich unter https://github.com/hermes5/dataintegration/blob/master/SharePointPrototype/Artifacts%20and%20deployment%20instructions.pdf?raw=true
+Die Installationsanweisung ist unter folgendem Link https://github.com/hermes5/dataintegration/blob/master/SharePointPrototype/Artifacts%20and%20deployment%20instructions.pdf?raw=true verfügbar.
 
 Der aktuelle Release kann unter https://github.com/hermes5/dataintegration/releases downgeloadet werden.
 
