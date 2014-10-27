@@ -19,6 +19,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 import javax.swing.JFileChooser;
@@ -40,6 +42,7 @@ import org.apache.poi.xssf.model.StylesTable;
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 import org.apache.poi.xssf.usermodel.XSSFRichTextString;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
+import org.apache.poi.xwpf.usermodel.XWPFHeader;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
 import org.apache.poi.xwpf.usermodel.XWPFTable;
@@ -228,13 +231,36 @@ public class SearchReplaceTerms
     private static void searchReplaceInFile( String input, String output, HashMap<String, String>  srTerms ) throws IOException, InvalidFormatException, FileNotFoundException
     {
         XWPFDocument doc = new XWPFDocument( OPCPackage.open( input ) );
+        
+        // Header
+        List<XWPFHeader> header = doc.getHeaderList();
+        for ( Iterator<XWPFHeader> e = header.iterator(); e.hasNext();  )
+        {
+            XWPFHeader h = e.next();
+            for ( XWPFParagraph p : h.getParagraphs() )
+            {
+                XWPFRun r = consolidateRuns( p );
+                if  ( r != null )
+                    searchReplace( srTerms, r );
+            }
+            for ( XWPFTable tbl : h.getTables() )
+                for ( XWPFTableRow row : tbl.getRows() )
+                    for ( XWPFTableCell cell : row.getTableCells() )
+                        for ( XWPFParagraph p : cell.getParagraphs() )
+                        {
+                            XWPFRun r = consolidateRuns( p );
+                            if  ( r != null )
+                                searchReplace( srTerms, r );
+                        }
+        }
+        
+        // Document
         for ( XWPFParagraph p : doc.getParagraphs() )
         {
             XWPFRun r = consolidateRuns( p );
             if  ( r != null )
                 searchReplace( srTerms, r );
         }
-        
         for ( XWPFTable tbl : doc.getTables() )
             for ( XWPFTableRow row : tbl.getRows() )
                 for ( XWPFTableCell cell : row.getTableCells() )
@@ -280,6 +306,7 @@ public class SearchReplaceTerms
     private static void searchReplace(HashMap<String, String> srTerms, XWPFRun r)
     {
         String text = r.getText( 0 );
+        System.out.println( text );
         for ( Map.Entry<String, String> sr : srTerms.entrySet() )
         {
             if ( text.contains( sr.getKey() ) )

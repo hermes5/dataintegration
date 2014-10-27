@@ -8,4 +8,5 @@
 </listAttribute>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="ch.admin.searchreplace.SearchReplaceTerms"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="replaceTerms"/>
+<stringAttribute key="org.eclipse.jdt.launching.WORKING_DIRECTORY" value="D:\TEMP\it"/>
 </launchConfiguration>
